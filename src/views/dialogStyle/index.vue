@@ -8,10 +8,11 @@
 <script setup lang="ts" name="DialogStylePage">
 import { ref } from 'vue'
 import MyDialog from '@/views/dialogStyle/components/MyDialog.vue';
+import { FilterData } from '@/views/dialogStyle/types';
 
 const show = ref(true)
 
-const filterList = [
+const filterList:FilterData[] = [
   {
     text: 'filter-1',
     width: 200

@@ -54,7 +54,7 @@ const routes = [
   {
     path: '/:path(.*)*',
     name: 'PageNotFound',
-    component: () => import('@/views/errorPage/404.vue'),
+    component: () => import('@/layout/errorPage/404.vue'),
   },
 ]
 

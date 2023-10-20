@@ -7,10 +7,10 @@
 ##### 1. 在不影响标题，顶部组件与底部组件高度的情况下，中间内容组件撑满容器其余高度
    ![](./images/contentHeight.png)
 
-##### 2. 顶部内容需要水平排列，并保持高度居中对齐
+##### 2. 顶部内容需要水平排列，并保持垂直居中对齐
    ![](./images/top-range.png)
 
-##### 3. 当`props.filterList`(src/views/dialogStyle/index.vue)未指定宽度时，当前`filter-item`默认宽度为剩余宽度的三分之一
+##### 3. `filter-item`单个默认宽度为剩余宽度（除查询按钮与展开按钮外）的三分之一
    ```js
    const filterList = [
      {

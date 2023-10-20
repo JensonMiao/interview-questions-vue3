@@ -4,7 +4,7 @@
       弹窗标题
     </div>
     <div class="top">
-      <div v-for="(item,index) in filterList" :key="index" class="filter-item">
+      <div v-for="(item,index) in filterList" :key="index" class="filter-item" :style="{width:item.width+'px'}">
         {{ item.text || 'filter-item' }}
       </div>
       <div>
