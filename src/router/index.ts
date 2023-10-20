@@ -32,7 +32,7 @@ const routeModuleList = Object.entries(pages).map(([key, value]) => {
 function getRouteData(path: string, value: Function) {
   const routerPath: string = path.replace('../views', '').replace('/index.vue', '') || '/'
   return {
-    path: routerPath.substring(routerPath.lastIndexOf('/')),
+    path: routerPath,
     name: routerPath.split('/').filter(Boolean).join('-') || 'index',
     component: value,
     meta: pageData[path.replace('index.vue', 'page.ts')]

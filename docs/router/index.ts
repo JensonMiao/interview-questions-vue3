@@ -12,7 +12,7 @@ const defaultRotes: RouteRecordRaw[] = [
     path: 'introductionDoc',
     name: 'IntroductionDoc',
     meta: {
-      title: '要求'
+      title: '必读'
     },
     // @ts-ignore
     component: () => import('../documents/introduction.md'),

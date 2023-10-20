@@ -1,6 +1,6 @@
 export default {
-  path: 'test',
-  name: 'Test',
+  path: 'dialogStyle',
+  name: 'DialogStyle',
   meta: {
     title: '弹窗布局',
     // menuTitle: '附加题'
