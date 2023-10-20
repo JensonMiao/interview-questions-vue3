@@ -45,17 +45,47 @@ type SwitchMenuItem = {
   title: string,
   path: string,
 }
-const componentMenuList: (Menu & {
-  path: string
-})[] = []
 const defaultMenuList: (Menu & {
   path: string
 })[] = []
+const componentMenuList: (Menu & {
+  path: string
+})[] = []
 
+
+const menuList: Menu[] = [
+  {
+    title: '基本信息',
+    list: defaultMenuList
+  },
+  {
+    title: '基础题',
+    list: componentMenuList
+  }
+];
+const menuObj: Record<string, (Menu & {
+  path: string
+})[]> = {}
 docsRotes.forEach(item => {
-  componentMenuList.push({
+  const menuTitle: string = item.meta?.menuTitle as string;
+  const menuData = {
     path: `/docs/${item.path}`,
     title: (item.meta?.title || item.name) as string
+  }
+  console.log(menuTitle)
+  if (menuTitle) {
+    if (!menuObj[menuTitle]) {
+      menuObj[menuTitle] = []
+    }
+    menuObj[menuTitle].push(menuData)
+  } else {
+    componentMenuList.push(menuData)
+  }
+})
+Object.keys(menuObj).forEach(item => {
+  menuList.push({
+    title: item,
+    list: menuObj[item]
   })
 })
 defaultRotes.forEach(item => {
@@ -64,17 +94,6 @@ defaultRotes.forEach(item => {
     title: (item.meta?.title || item.name) as string
   })
 })
-
-const menuList: Menu[] = [
-  {
-    title: '基本信息',
-    list: defaultMenuList
-  },
-  {
-    title: '通用组件',
-    list: componentMenuList
-  }
-];
 const router = useRouter();
 const route = useRoute();
 const menuIndex = ref(route.path);

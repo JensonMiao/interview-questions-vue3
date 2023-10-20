@@ -59,6 +59,12 @@ dependencies:
   lodash-es:
     specifier: ^4.17.21
     version: 4.17.21
+  markdown-it-container:
+    specifier: ^3.0.0
+    version: 3.0.0
+  markdown-it-for-inline:
+    specifier: ^0.1.1
+    version: 0.1.1
   pinia:
     specifier: ^2.1.7
     version: 2.1.7(typescript@5.1.6)(vue@3.3.4)
@@ -3852,6 +3858,14 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       object-visit: 1.0.1
+    dev: false
+
+  /markdown-it-container@3.0.0:
+    resolution: {integrity: sha512-y6oKTq4BB9OQuY/KLfk/O3ysFhB3IMYoIWhGJEidXt1NQFocFK2sA2t0NYZAMyMShAGL6x5OPIbrmXPIqaN9rw==}
+    dev: false
+
+  /markdown-it-for-inline@0.1.1:
+    resolution: {integrity: sha512-lLQuczOg90a9q9anIUbmq+M+FFrIYNN5TfpccLDRchQic8nj/uTqaJKoYr73FF2tR4O8mFfh2ZzCDAAB2MZJgA==}
     dev: false
 
   /markdown-it@13.0.2:

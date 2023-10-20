@@ -49,6 +49,12 @@ defineProps({
 
 .top {
   background: rgba(0, 0, 0, .2);
+  padding: 10px;
+}
+
+.filter-item{
+  background-color: #f4f4f5;
+  padding: 0 5px;
 }
 
 .content {

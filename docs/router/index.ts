@@ -1,10 +1,8 @@
 import { RouteRecordRaw } from 'vue-router';
-import * as fs from 'fs';
 
 const models = import.meta.glob('../../**/doc/index.ts', { eager: true })
 const docsRotes: RouteRecordRaw[] = []
 Object.keys(models).forEach(key => {
-  console.log((models[key] as any)?.default)
   docsRotes.push((models[key] as any)?.default)
 })
 
@@ -14,7 +12,7 @@ const defaultRotes: RouteRecordRaw[] = [
     path: 'introductionDoc',
     name: 'IntroductionDoc',
     meta: {
-      title: '项目简介'
+      title: '要求'
     },
     // @ts-ignore
     component: () => import('../documents/introduction.md'),

@@ -13,14 +13,30 @@ const show = ref(true)
 
 const filterList = [
   {
-    text: 'filter-1'
+    text: 'filter-1',
+    width: 200
   },
   {
-    text: 'filter-2'
+    text: 'filter-2',
   },
   {
-    text: 'filter-3'
-  }
+    text: 'filter-3',
+  },
+  {
+    text: 'filter-4',
+  },
+  {
+    text: 'filter-5',
+  },
+  {
+    text: 'filter-6',
+  },
+  {
+    text: 'filter-7',
+  },
+  {
+    text: 'filter-8',
+  },
 ]
 
 </script>
@@ -29,6 +45,6 @@ const filterList = [
 .content {
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,.2);
+  background: rgba(0, 0, 0, .2);
 }
 </style>

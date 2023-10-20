@@ -7,11 +7,11 @@ import docsRotes, { defaultRotes } from '@docs/router'
 import Nothing from '@/layout/Nothing.vue'
 
 const modules = import.meta.glob('../views/**/index.vue')
-const pageData = import.meta.glob('../views/**/page.ts',{
+const pageData = import.meta.glob('../views/**/page.ts', {
   eager: true,
   import: 'default',
 })
-const pages = {}
+const pages: Record<string, Function> = {}
 Object.keys(modules).forEach((key) => {
   const item = modules[key]
   if (!key.includes('/components')) {
@@ -21,27 +21,27 @@ Object.keys(modules).forEach((key) => {
 type MapRouteData = {
   path: string,
   menuPath: string,
-  value:any,
+  value: any,
   children: [MapRouteData]
 }
 
-const routeModuleList: RouteRecordRaw[] =Object.entries(pages).map(([key, value]) => {
-  return getRouteData(key,value)
+const routeModuleList = Object.entries(pages).map(([key, value]) => {
+  return getRouteData(key, value as Function)
 })
 
-function getRouteData(path:string,value:Function) {
-  const routerPath:string = path.replace('../views','').replace('/index.vue','')||'/'
+function getRouteData(path: string, value: Function) {
+  const routerPath: string = path.replace('../views', '').replace('/index.vue', '') || '/'
   return {
     path: routerPath.substring(routerPath.lastIndexOf('/')),
-    name: routerPath.split('/').filter(Boolean).join('-')||'index',
+    name: routerPath.split('/').filter(Boolean).join('-') || 'index',
     component: value,
-    meta:pageData[path.replace('index.vue', 'page.ts')]
+    meta: pageData[path.replace('index.vue', 'page.ts')]
   }
 }
 
 
 if (import.meta.env.VITE_DOCS === 'true') {
-  routeModuleList.push(docsRotes)
+  routeModuleList.push(docsRotes as any)
 }
 
 const routes = [
@@ -72,7 +72,7 @@ function checkComponent(routeList: any[]) {
 checkComponent(routes)
 export const router = createRouter({
   history: createWebHashHistory(import.meta.env.VITE_PUBLIC_PATH),
-  routes,
+  routes: routes as RouteRecordRaw[],
   strict: true,
   scrollBehavior: () => ({ left: 0, top: 0 }),
 })

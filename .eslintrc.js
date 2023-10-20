@@ -122,6 +122,7 @@ module.exports = {
     withDefaults: 'readonly'
   },
   rules: {
+    'no-return-assign': 'off',
     'quotes': [2, 'single'], // 设置单引号
     'no-nested-ternary': 'off', // 禁止嵌套三元表达式
     'default-case': 'off',

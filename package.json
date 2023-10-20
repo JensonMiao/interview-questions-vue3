@@ -27,6 +27,8 @@
     "eslint-plugin-vue": "^9.17.0",
     "highlight.js": "^11.9.0",
     "lodash-es": "^4.17.21",
+    "markdown-it-container": "^3.0.0",
+    "markdown-it-for-inline": "^0.1.1",
     "pinia": "^2.1.7",
     "qs": "^6.11.2",
     "sass": "^1.69.3",
