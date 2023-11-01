@@ -1,5 +1,5 @@
 <template>
-  我是{{ pageName }}页面的Singleton组件
+  这是{{ pageName }}页面的Singleton组件
 </template>
 <script lang="ts" setup name="Singleton">
 
